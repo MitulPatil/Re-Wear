@@ -94,7 +94,8 @@ For issues, check:
 
 *Happy sustainable fashion! 🌱👕*
 
-Team Name:
+Team Name: hacktivists
+contributors:
 Dipesh Chaubey 
 Mitul Patil
 Omkumar Parmar
