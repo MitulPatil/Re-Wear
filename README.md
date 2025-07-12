@@ -1,5 +1,7 @@
 # ReWear - Community Clothing Exchange
 
+Product Presentation Video: https://drive.google.com/file/d/1C2D32PGjrfoXoG8sVZBaqb08MrIL-vMr/view?usp=sharing
+
 A sustainable fashion platform where users can list, browse, swap, and purchase clothing items using a points-based reward system.
 
 ## ✨ Features
@@ -96,7 +98,7 @@ For issues, check:
 
 Team Name: hacktivists
 contributors:
-Dipesh Chaubey 
-Mitul Patil
-Omkumar Parmar
-Singh Shashi
+#Dipesh Chaubey
+#Mitul Patil
+#Omkumar Parmar
+#Singh Shashi
