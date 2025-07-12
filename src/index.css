@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-dark-base text-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+}
+
+@layer components {
+  /* Typography */
+  .font-display {
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 via-purple-600 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-purple-600 via-pink-600 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply relative bg-gradient-to-r from-primary-600 via-purple-600 to-primary-700 hover:from-primary-700 hover:via-purple-700 hover:to-primary-800 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100 overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl;
+  }
+
+  .btn-secondary {
+    @apply relative bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 text-gray-900 dark:text-gray-100 font-semibold py-4 px-8 rounded-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100;
+  }
+
+  .btn-outline {
+    @apply relative border-2 border-primary-500/50 bg-primary-500/10 hover:border-primary-500 hover:bg-primary-500/20 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold py-4 px-8 rounded-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100;
+  }
+
+  .btn-ghost {
+    @apply text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100/50 dark:hover:bg-white/5 font-medium py-3 px-6 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500/30 backdrop-blur-sm;
+  }
+
+  .btn-success {
+    @apply bg-gradient-to-r from-success-600 to-success-700 hover:from-success-700 hover:to-success-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-success-500/30 focus:ring-offset-2 dark:focus:ring-offset-gray-900 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-warning {
+    @apply bg-gradient-to-r from-warning-600 to-warning-700 hover:from-warning-700 hover:to-warning-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-warning-500/30 focus:ring-offset-2 dark:focus:ring-offset-gray-900 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-error {
+    @apply bg-gradient-to-r from-error-600 to-error-700 hover:from-error-700 hover:to-error-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-error-500/30 focus:ring-offset-2 dark:focus:ring-offset-gray-900 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  /* Input Components */
+  .input-field {
+    @apply w-full px-6 py-4 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200/50 dark:border-white/10 text-gray-900 dark:text-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:border-primary-500/50 transition-all duration-300 placeholder-gray-500 dark:placeholder-gray-400;
+  }
+
+  .input-field:focus {
+    @apply bg-white/80 dark:bg-white/10 shadow-xl transform scale-105;
+  }
+
+  .textarea-field {
+    @apply input-field resize-none;
+  }
+
+  .select-field {
+    @apply input-field appearance-none;
+  }
+
+  /* Card Components */
+  .card {
+    @apply bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 dark:border-white/10 overflow-hidden transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-2xl hover:scale-105 hover:-translate-y-2 dark:hover:bg-white/10 transition-all duration-300;
+  }
+
+  .card-elevated {
+    @apply bg-white/90 dark:bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 dark:border-white/20 overflow-hidden;
+  }
+
+  .card-glass {
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 dark:border-white/10 shadow-2xl;
+  }
+
+  /* Badge Components */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-800 dark:bg-secondary-900/30 dark:text-secondary-300;
+  }
+
+  .badge-success {
+    @apply badge bg-success-100 text-success-800 dark:bg-success-900/30 dark:text-success-300;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-800 dark:bg-warning-900/30 dark:text-warning-300;
+  }
+
+  .badge-error {
+    @apply badge bg-error-100 text-error-800 dark:bg-error-900/30 dark:text-error-300;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300;
+  }
+
+  /* Navigation Components */
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all duration-200 relative;
+  }
+
+  .nav-link.active {
+    @apply text-primary-600 dark:text-primary-400;
+  }
+
+  .nav-link.active::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400 rounded-full;
+  }
+
+  /* Layout Components */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Animation Classes */
+  /* Removed .animate-bounce-gentle and .animate-pulse-gentle due to circular dependency error. Use animate-bounce-gentle and animate-pulse-gentle utility classes directly. */
+
+  /* Gradient Backgrounds */
+  .bg-gradient-card {
+    @apply bg-gradient-to-br from-white to-gray-50 dark:from-dark-card dark:to-dark-hover;
+  }
+
+  /* Text Gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-600 to-secondary-700 bg-clip-text text-transparent;
+  }
+
+  /* Custom Scrollbar */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.primary.300") theme("colors.gray.200");
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-gray-200 dark:bg-gray-700 rounded-full;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 dark:bg-primary-600 rounded-full;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-400 dark:bg-primary-500;
+  }
+}
+
+/*
+  Form-Centric Dark Mode Cursor
+  To enable: add the class 'form-dark-cursor' to <body> or <html>.
+  This will apply a subtle dark-outline cursor to all form elements (input, textarea, select, button),
+  indicating a "form-centric dark mode" while the rest of the page remains light.
+*/
+.form-dark-cursor input,
+.form-dark-cursor textarea,
+.form-dark-cursor select,
+.form-dark-cursor button {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="7" fill="black" fill-opacity="0.12" stroke="%23333" stroke-width="2"/><circle cx="16" cy="16" r="11" fill="none" stroke="%23333" stroke-width="1" opacity="0.18"/></svg>')
+      16 16,
+    pointer;
+  /* fallback for browsers that don't support custom cursors */
+  /* box-shadow for a faint glow on focus */
+}
+.form-dark-cursor input:focus,
+.form-dark-cursor textarea:focus,
+.form-dark-cursor select:focus,
+.form-dark-cursor button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #222, 0 0 8px 2px #2222;
+}
